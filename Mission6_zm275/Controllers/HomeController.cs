@@ -12,10 +12,11 @@ namespace Mission6_zm275.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private FilmApplication _ApplicationContext { get; set; }
+        public HomeController(ILogger<HomeController> logger, FilmApplication someName)
         {
             _logger = logger;
+            _ApplicationContext = someName;
         }
 
         public IActionResult Index()
@@ -27,11 +28,24 @@ namespace Mission6_zm275.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult Form()
         {
             FormModel model = new FormModel();
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult Form(FormModel fm)
+        {
+             // return a confirmation
+                _ApplicationContext.Add(fm);
+                _ApplicationContext.SaveChanges();
+
+                return View("Confirmation", fm);
+            
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

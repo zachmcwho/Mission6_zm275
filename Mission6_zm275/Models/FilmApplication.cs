@@ -15,45 +15,46 @@ namespace Mission6_zm275.Models
 
         public DbSet<FormModel> Responses { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder mb)
-        //{
-        //    mb.Entity<FormModel>().HasData(
-        //        new FormModel
-        //        {
+        protected override void OnModelCreating(ModelBuilder mb)
+        {
+            mb.Entity<FormModel>().HasData(
+                new FormModel
+                {
 
-        //            FormId = 1,
-        //            Title = "Fast N Furious",
-        //            Category = "Action",
-        //            Year = 2001,
-        //            Director = "Steve",
-        //            SelectedItem = "R",
-        //            Edited = true
-        //        },
-        //        new FormModel
-        //        {
+                    FormId = 1,
+                    Title = "Fast n Furious",
+                    Category = "Action",
+                    Year = 2001,
+                    Director = "dave",
+                    SelectedItem = "PG-13",
+                    Edited = false
+                },
+                new FormModel
+                {
 
-        //            FormId = 1,
-        //            Title = "Fast N Furious 2",
-        //            Category = "Action",
-        //            Year = 2004,
-        //            Director = "Steve",
-        //            SelectedItem = "R",
-        //            Edited = true
-        //        },
-        //        new FormModel
-        //        {
+                    FormId = 3,
+                    Title = "Fast N Furious 2",
+                    Category = "Action",
+                    Year = 2004,
+                    Director = "dave",
+                    SelectedItem = "PG-13",
+                    Edited = true
+                },
+                new FormModel
+                {
 
-        //            FormId = 1,
-        //            Title = "Fast N Furious 3",
-        //            Category = "Action",
-        //            Year = 2006,
-        //            Director = "Steve",
-        //            SelectedItem = "R",
-        //            Edited = false
-        //        }
+                    FormId = 2,
+                    Title = "romeo",
+                    Category = "romance",
+                    Year = 21,
+                    Director = "adam",
+                    SelectedItem = "G",
+                    LentTo = "noone",
+                    Edited = true
+                }
 
-        //         );
-        //}
+                 );
+        }
     }
 
     

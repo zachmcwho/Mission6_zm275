@@ -14,16 +14,24 @@ namespace Mission6_zm275.Models
         }
 
         public DbSet<FormModel> Responses { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
+        //seed data
         protected override void OnModelCreating(ModelBuilder mb)
         {
+
+            mb.Entity<Category>().HasData(
+                new Category { CategoryId = 1, CategoryName = "Action" },
+                new Category { CategoryId = 2, CategoryName = "Romance" },
+                new Category { CategoryId = 3, CategoryName = "None" }
+                );
             mb.Entity<FormModel>().HasData(
                 new FormModel
                 {
 
                     FormId = 1,
                     Title = "Fast n Furious",
-                    Category = "Action",
+                    CategoryId = 1,
                     Year = 2001,
                     Director = "dave",
                     SelectedItem = "PG-13",
@@ -34,7 +42,7 @@ namespace Mission6_zm275.Models
 
                     FormId = 3,
                     Title = "Fast N Furious 2",
-                    Category = "Action",
+                    CategoryId = 1,
                     Year = 2004,
                     Director = "dave",
                     SelectedItem = "PG-13",
@@ -45,7 +53,7 @@ namespace Mission6_zm275.Models
 
                     FormId = 2,
                     Title = "romeo",
-                    Category = "romance",
+                    CategoryId = 2,
                     Year = 21,
                     Director = "adam",
                     SelectedItem = "G",

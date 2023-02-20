@@ -12,37 +12,21 @@ namespace Mission6_zm275.Models
         
         [Key]
         public int FormId { get; set; }
-        [Required]
-        public string Category { get; set; }
 
+        //foreign key relationship
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         [Required]
+
+
         public string Title { get; set; }
-
         [Required]
         public int Year { get; set; }
-
         [Required]
         public string Director { get; set; }
-
         [Required]
-        
         public string SelectedItem { get; set; }
-        //public IEnumerable<SelectListItem> Items { get; set; }
-
-        //public FormModel()
-        //{
-        //    Items = new List<SelectListItem>
-        //{
-        //    new SelectListItem {Value = "1", Text = "G"},
-        //    new SelectListItem {Value = "2", Text = "PG"},
-        //    new SelectListItem {Value = "3", Text = "PG-13"},
-        //    new SelectListItem {Value = "4", Text = "R"},
-        //};
-        //}
-
-
         public string LentTo { get; set; }
-        
         public string Notes { get; set;}
         public bool Edited { get; set; }
         

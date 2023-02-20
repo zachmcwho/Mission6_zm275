@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission6_zm275.Models;
 using System;
@@ -31,6 +32,7 @@ namespace Mission6_zm275.Controllers
         [HttpGet]
         public IActionResult Form()
         {
+            ViewBag.Categories = _ApplicationContext.Categories.ToList();
             FormModel model = new FormModel();
             return View(model);
         }
@@ -44,6 +46,14 @@ namespace Mission6_zm275.Controllers
 
                 return View("Confirmation", fm);
             
+        }
+
+        [HttpGet]
+        public IActionResult Movies()
+        {
+            var movieList = _ApplicationContext.Responses.Include(x => x.Category)
+                .ToList();
+            return View(movieList);
         }
 
 

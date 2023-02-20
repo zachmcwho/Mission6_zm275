@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Movies";
+}
+
+@model List<FormModel>
+
+<h1>Movies</h1>
+
+<table class="table table-bordered table-striped">
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Title</td>
+            <td>Category</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Title</td>
+                    <td>@i.Category.CategoryName</td>
+                </tr>
+            }
+    </tbody>
+</table>
+

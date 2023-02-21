@@ -29,7 +29,7 @@ namespace Mission6_zm275.Migrations
                     Title = table.Column<string>(nullable: false),
                     Year = table.Column<int>(nullable: false),
                     Director = table.Column<string>(nullable: false),
-                    SelectedItem = table.Column<string>(nullable: false),
+                    Rating = table.Column<string>(nullable: false),
                     LentTo = table.Column<string>(nullable: true),
                     Notes = table.Column<string>(nullable: true),
                     Edited = table.Column<bool>(nullable: false)
@@ -62,17 +62,17 @@ namespace Mission6_zm275.Migrations
 
             migrationBuilder.InsertData(
                 table: "Responses",
-                columns: new[] { "FormId", "CategoryId", "Director", "Edited", "LentTo", "Notes", "SelectedItem", "Title", "Year" },
+                columns: new[] { "FormId", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 1, 1, "dave", false, null, null, "PG-13", "Fast n Furious", 2001 });
 
             migrationBuilder.InsertData(
                 table: "Responses",
-                columns: new[] { "FormId", "CategoryId", "Director", "Edited", "LentTo", "Notes", "SelectedItem", "Title", "Year" },
+                columns: new[] { "FormId", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 3, 1, "dave", true, null, null, "PG-13", "Fast N Furious 2", 2004 });
 
             migrationBuilder.InsertData(
                 table: "Responses",
-                columns: new[] { "FormId", "CategoryId", "Director", "Edited", "LentTo", "Notes", "SelectedItem", "Title", "Year" },
+                columns: new[] { "FormId", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 2, 2, "adam", true, "noone", null, "G", "romeo", 21 });
 
             migrationBuilder.CreateIndex(

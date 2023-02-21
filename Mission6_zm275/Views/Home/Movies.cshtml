@@ -12,16 +12,35 @@
         <tr>
             <td>Title</td>
             <td>Category</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Lent To</td>
+            <td>Notes</td>
+            <td>Edited</td>
+            <td>FormId</td>
+
         </tr>
     </thead>
 
     <tbody>
         @foreach (var i in Model)
             {
-                <tr>
-                    <td>@i.Title</td>
-                    <td>@i.Category.CategoryName</td>
-                </tr>
+        <tr>
+            <td>@i.Title</td>
+            <td>@i.Category.CategoryName</td>
+            <td>@i.Year</td>
+            <td>@i.Director</td>
+            <td>@i.Rating</td>
+            <td>@i.LentTo</td>
+            <td>@i.Notes</td>
+            <td>@i.Edited</td>
+            <td>@i.FormId</td>
+
+            <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@i.FormId">Edit</a></td>
+            <td><a asp-controller="Home" asp-action="Delete">Delete</a></td>
+
+        </tr>
             }
     </tbody>
 </table>

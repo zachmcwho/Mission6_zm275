@@ -68,7 +68,7 @@ namespace Mission6_zm275.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("SelectedItem")
+                    b.Property<string>("Rating")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -92,7 +92,7 @@ namespace Mission6_zm275.Migrations
                             CategoryId = 1,
                             Director = "dave",
                             Edited = false,
-                            SelectedItem = "PG-13",
+                            Rating = "PG-13",
                             Title = "Fast n Furious",
                             Year = 2001
                         },
@@ -102,7 +102,7 @@ namespace Mission6_zm275.Migrations
                             CategoryId = 1,
                             Director = "dave",
                             Edited = true,
-                            SelectedItem = "PG-13",
+                            Rating = "PG-13",
                             Title = "Fast N Furious 2",
                             Year = 2004
                         },
@@ -113,7 +113,7 @@ namespace Mission6_zm275.Migrations
                             Director = "adam",
                             Edited = true,
                             LentTo = "noone",
-                            SelectedItem = "G",
+                            Rating = "G",
                             Title = "romeo",
                             Year = 21
                         });

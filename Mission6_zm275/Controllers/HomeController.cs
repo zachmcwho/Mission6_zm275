@@ -56,6 +56,19 @@ namespace Mission6_zm275.Controllers
             return View(movieList);
         }
 
+        public IActionResult Edit(int formid)
+        {
+            ViewBag.Categories = _ApplicationContext.Categories.ToList();
+            FormModel form = _ApplicationContext.Responses.Single(i => i.FormId == formid);
+           
+            return View("Form", form);
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

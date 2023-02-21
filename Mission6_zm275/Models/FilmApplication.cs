@@ -34,7 +34,7 @@ namespace Mission6_zm275.Models
                     CategoryId = 1,
                     Year = 2001,
                     Director = "dave",
-                    SelectedItem = "PG-13",
+                    Rating = "PG-13",
                     Edited = false
                 },
                 new FormModel
@@ -45,7 +45,7 @@ namespace Mission6_zm275.Models
                     CategoryId = 1,
                     Year = 2004,
                     Director = "dave",
-                    SelectedItem = "PG-13",
+                    Rating = "PG-13",
                     Edited = true
                 },
                 new FormModel
@@ -56,7 +56,7 @@ namespace Mission6_zm275.Models
                     CategoryId = 2,
                     Year = 21,
                     Director = "adam",
-                    SelectedItem = "G",
+                    Rating = "G",
                     LentTo = "noone",
                     Edited = true
                 }

@@ -25,7 +25,7 @@ namespace Mission6_zm275.Models
         [Required]
         public string Director { get; set; }
         [Required]
-        public string SelectedItem { get; set; }
+        public string Rating { get; set; }
         public string LentTo { get; set; }
         public string Notes { get; set;}
         public bool Edited { get; set; }

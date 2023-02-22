@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+}
+@model FormModel
+<h1>Confirm Delete</h1>
+<h2>Are you sure you want to delete @Model.Title</h2>
+
+
+<form method="post" asp-action="Delete">
+    @*add 2 buttons for delete/cancel*@
+    <a asp-controller="Home" asp-action="Movies" class="btn-primary" asp-route-id="@Model.FormId">Cancel</a>
+    <button type="submit">Delete</button>
+    <input asp-for="FormId" type="hidden" />
+</form>
+

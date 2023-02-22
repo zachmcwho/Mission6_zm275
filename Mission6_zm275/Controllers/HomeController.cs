@@ -55,18 +55,36 @@ namespace Mission6_zm275.Controllers
                 .ToList();
             return View(movieList);
         }
-
-        public IActionResult Edit(int formid)
+        // adds edit ability
+        [HttpGet]
+        public IActionResult Edit(int id)
         {
             ViewBag.Categories = _ApplicationContext.Categories.ToList();
-            FormModel form = _ApplicationContext.Responses.Single(i => i.FormId == formid);
+            FormModel form = _ApplicationContext.Responses.Single(i => i.FormId == id);
            
             return View("Form", form);
         }
+        [HttpPost]
 
-        public IActionResult Delete()
+        public IActionResult Edit(FormModel fm)
         {
-            return View();
+            _ApplicationContext.Update(fm);
+            _ApplicationContext.SaveChanges();
+
+            return RedirectToAction("Movies");
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            FormModel delete = _ApplicationContext.Responses.Single(i => i.FormId == id);
+            return View(delete);
+        }
+        [HttpPost]
+        public IActionResult Delete(FormModel fm)
+        {
+            _ApplicationContext.Remove(fm);
+            _ApplicationContext.SaveChanges();
+            return RedirectToAction("Movies");
         }
 
 
